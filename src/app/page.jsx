@@ -313,17 +313,30 @@ function MainComponent() {
             whileInView="visible"
             viewport={{ 
               once: true, 
-              margin: "-20%",
-              amount: 0.2
+              margin: "-20%",  // ビューポートの20%が見えたら開始
+              amount: 0.2      // 要素の40%が見えたら開始
             }}
             variants={staggerChildren}
             id="features"
             className="py-16 sm:py-24 md:py-32 lg:py-40 bg-[#e5e4e0] text-[#2c2d22]"
           >
-            <div className="w-full max-w-4xl mx-auto">
-              <motion.div variants={fadeInUp} className="text-sm tracking-[0.2em] mb-4 text-center">02</motion.div>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif mb-16 md:mb-20 text-center">Features</motion.h2>
-              <motion.ul variants={staggerChildren} className="space-y-12 md:space-y-16">
+            <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+              <motion.div 
+                variants={fadeInUp} 
+                className="text-sm tracking-[0.2em] mb-4 text-center"
+              >
+                02
+              </motion.div>
+              <motion.h2 
+                variants={fadeInUp} 
+                className="text-3xl md:text-4xl font-serif mb-16 md:mb-20 text-center"
+              >
+                Features
+              </motion.h2>
+              <motion.ul 
+                variants={staggerChildren}
+                className="space-y-12 md:space-y-16"
+              >
                 {[
                   {
                     number: "01",
@@ -354,7 +367,7 @@ function MainComponent() {
                   <motion.li
                     key={index}
                     variants={fadeInScale}
-                    className="flex flex-col md:flex-row items-start hover:bg-[#938463] hover:text-[#e5e4e0] p-6 rounded-lg transition-all duration-500"
+                    className="flex flex-col md:flex-row items-start hover:bg-[#938463] hover:text-[#e5e4e0] p-4 sm:p-6 rounded-lg transition-all duration-500"
                     whileHover={{
                       scale: 1.02,
                       y: -5,
@@ -364,10 +377,10 @@ function MainComponent() {
                       }
                     }}
                   >
-                    <span className="text-xl md:text-2xl mr-4 font-bold mb-4 md:mb-0">{feature.number}.</span>
-                    <div>
-                      <h3 className="text-xl md:text-2xl mb-4 font-bold">{feature.title}</h3>
-                      <p className="text-base md:text-lg leading-relaxed whitespace-pre-line">
+                    <span className="text-lg sm:text-xl md:text-2xl mr-4 font-bold mb-2 md:mb-0">{feature.number}.</span>
+                    <div className="w-full">
+                      <h3 className="text-lg sm:text-xl md:text-2xl mb-3 font-bold">{feature.title}</h3>
+                      <p className="text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-line">
                         {feature.description}
                       </p>
                     </div>
