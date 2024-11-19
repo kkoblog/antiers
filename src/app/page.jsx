@@ -270,11 +270,16 @@ function MainComponent() {
                   variants={fadeInUp}
                   className="w-full md:w-1/2"
                 >
-                  <img
-                    src="/images/tenai2.JPG"
-                    alt="美容室のコンセプトイメージ"
-                    className="w-full h-auto object-cover rounded-lg shadow-xl"
-                  />
+                  <div className="relative aspect-[4/3] md:aspect-auto">
+                    <img
+                      src="/images/tenai2.JPG"
+                      alt="美容室のコンセプトイメージ"
+                      className="w-full h-full object-cover rounded-lg shadow-xl"
+                      style={{
+                        maxHeight: '400px'  // デスクトップでの最大高さを制限
+                      }}
+                    />
+                  </div>
                 </motion.div>
                 <motion.div 
                   variants={staggerChildren}
@@ -398,60 +403,60 @@ function MainComponent() {
             <div className="max-w-6xl mx-auto px-4 sm:px-8 md:px-12">
               <div className="text-sm tracking-[0.2em] mb-4 text-center">03</div>
               <h2 className="text-3xl md:text-4xl font-serif mb-16 md:mb-20 text-center">Menu</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                 <div className="pb-8 md:pb-0">
-                  <h3 className="text-xl md:text-2xl mb-8 md:mb-8 border-b pb-2">Cut Menu</h3>
-                  <div className="space-y-8 md:space-y-6">
+                  <h3 className="text-xl md:text-2xl mb-6 md:mb-8 border-b pb-2">Cut Menu</h3>
+                  <div className="space-y-6">
                     <div className="flex justify-between items-center">
                       <span className="text-base md:text-lg">カット</span>
-                      <span className="text-base md:text-lg ml-8">¥4,200</span>
+                      <span className="text-base md:text-lg">¥4,200</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-base md:text-lg">前髪カット</span>
-                      <span className="text-base md:text-lg ml-8">¥1,200</span>
+                      <span className="text-base md:text-lg">¥1,200</span>
                     </div>
                   </div>
                 </div>
                 <div className="pb-8 md:pb-0">
-                  <h3 className="text-xl md:text-2xl mb-8 md:mb-8 border-b pb-2">Treatment Menu</h3>
-                  <div className="space-y-8 md:space-y-6">
+                  <h3 className="text-xl md:text-2xl mb-6 md:mb-8 border-b pb-2">Treatment Menu</h3>
+                  <div className="space-y-6">
                     <div className="flex justify-between items-center">
-                      <span className="text-base md:text-lg">オッジオット<br className="md:hidden"/>(ベーシック)</span>
-                      <span className="text-base md:text-lg ml-8">¥4,700</span>
+                      <span className="text-base md:text-lg">オッジオット(ベーシック)</span>
+                      <span className="text-base md:text-lg">¥4,700</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-base md:text-lg">オッジオット<br className="md:hidden"/>(プレミアム)</span>
-                      <span className="text-base md:text-lg ml-8">¥8,200</span>
+                      <span className="text-base md:text-lg">オッジオット(プレミアム)</span>
+                      <span className="text-base md:text-lg">¥8,200</span>
                     </div>
                   </div>
                 </div>
                 <div className="pb-8 md:pb-0">
-                  <h3 className="text-xl md:text-2xl mb-8 md:mb-8 border-b pb-2">Color Menu</h3>
-                  <div className="space-y-8 md:space-y-6">
+                  <h3 className="text-xl md:text-2xl mb-6 md:mb-8 border-b pb-2">Color Menu</h3>
+                  <div className="space-y-6">
                     <div className="flex justify-between items-center">
                       <span className="text-base md:text-lg">カラー</span>
-                      <span className="text-base md:text-lg ml-8">¥6,200</span>
+                      <span className="text-base md:text-lg">¥6,200</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-base md:text-lg">イルミナカラー</span>
-                      <span className="text-base md:text-lg ml-8">¥8,200</span>
+                      <span className="text-base md:text-lg">¥8,200</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-base md:text-lg">リタッチ</span>
-                      <span className="text-base md:text-lg ml-8">¥4,700</span>
+                      <span className="text-base md:text-lg">¥4,700</span>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl md:text-2xl mb-8 md:mb-8 border-b pb-2">Perm Menu</h3>
-                  <div className="space-y-8 md:space-y-6">
+                  <h3 className="text-xl md:text-2xl mb-6 md:mb-8 border-b pb-2">Perm Menu</h3>
+                  <div className="space-y-6">
                     <div className="flex justify-between items-center">
                       <span className="text-base md:text-lg">パーマ</span>
-                      <span className="text-base md:text-lg ml-8">¥6,200</span>
+                      <span className="text-base md:text-lg">¥6,200</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-base md:text-lg">クリープパーマ</span>
-                      <span className="text-base md:text-lg ml-8">¥8,200</span>
+                      <span className="text-base md:text-lg">¥8,200</span>
                     </div>
                   </div>
                 </div>
