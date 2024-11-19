@@ -81,7 +81,7 @@ function MainComponent() {
         </div>
       </section>
 
-      <section className="py-32 bg-gradient-to-b from-[#938463] to-[#7d5c45] flex items-center text-[#e5e4e0]">
+      <section id="concept" className="py-32 bg-gradient-to-b from-[#938463] to-[#7d5c45] flex items-center text-[#e5e4e0]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2">
@@ -153,7 +153,7 @@ function MainComponent() {
                   <h3 className="text-2xl mb-4 font-bold">敏感肌にも安心の施術</h3>
                   <p className="text-[#2c2d22] leading-relaxed">
                     「薬害70%カット、刺激を抑えた優しいケア」<br />
-                    カラーリングで刺激を感じ��すい方にも安心な薬剤を使用。髪と頭皮に優しい施術で、美しさと安心感を両立します
+                    カラーリングで刺激を感じやすい方にも安心な薬剤を使用。髪と頭皮に優しい施術で、美しさと安心感を両立します。
                   </p>
                 </div>
               </li>
