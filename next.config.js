@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    esmExternals: 'loose'
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
   },
-  webpack: (config) => {
-    config.externals = [...config.externals, { canvas: "canvas" }]; // required to make pdfjs work
-    return config;
-  },
+  distDir: '.next',
+  output: 'standalone',
 };
 
 module.exports = nextConfig;

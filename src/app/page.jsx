@@ -2,30 +2,9 @@
 import React, { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { SiLine } from "react-icons/si";
+import Image from 'next/image'
 
 function MainComponent() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
-  const [predictions, setPredictions] = useState([]);
-  const handleSearch = async (input) => {
-    setSearchInput(input);
-    if (input.length > 2) {
-      const response = await fetch(
-        `/integrations/google-place-autocomplete/autocomplete/json?input=${input}&radius=500`
-      );
-      const data = await response.json();
-      setPredictions(data.predictions);
-    } else {
-      setPredictions([]);
-    }
-  };
-
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    element.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="min-h-screen bg-[#e5e4e0] text-[#2c2d22] font-crimson-text">
       <nav className="fixed w-full z-50 bg-[#938463]/90 backdrop-blur-sm left-0">
@@ -34,28 +13,24 @@ function MainComponent() {
             <div className="flex space-x-16">
               <a
                 href="#concept"
-                onClick={(e) => scrollToSection(e, 'concept')}
                 className="text-base hover:text-gray-300 tracking-wider"
               >
                 Concept
               </a>
               <a
                 href="#features"
-                onClick={(e) => scrollToSection(e, 'features')}
                 className="text-base hover:text-gray-300 tracking-wider"
               >
                 Features
               </a>
               <a
                 href="#menu"
-                onClick={(e) => scrollToSection(e, 'menu')}
                 className="text-base hover:text-gray-300 tracking-wider"
               >
                 Menu
               </a>
               <a
                 href="#access"
-                onClick={(e) => scrollToSection(e, 'access')}
                 className="text-base hover:text-gray-300 tracking-wider"
               >
                 Access
@@ -76,16 +51,18 @@ function MainComponent() {
 
       <section className="h-screen relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/images/top.jpg"
+          <Image
+            src="/images/top.JPG"
             alt="高級美容室の内装"
-            className="w-full h-full object-cover object-bottom animate-scaleDown"
+            width={1920}
+            height={1080}
+            priority
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="absolute inset-0 animate-luxuryFade">
           <img
-            src="/images/tenai.jpg"
+            src="/images/tenai.JPG"
             alt="高級な革張りの美容室チェア"
             className="w-full h-full object-cover animate-scaleUp"
           />
@@ -104,12 +81,12 @@ function MainComponent() {
         </div>
       </section>
 
-      <section id="concept" className="py-32 bg-gradient-to-b from-[#938463] to-[#7d5c45] flex items-center text-[#e5e4e0]">
+      <section className="py-32 bg-gradient-to-b from-[#938463] to-[#7d5c45] flex items-center text-[#e5e4e0]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2">
               <img
-                src="/images/tenai2.jpg"
+                src="/images/tenai2.JPG"
                 alt="美容室のコンセプトイメージ"
                 className="w-full h-[400px] object-cover"
               />
@@ -132,7 +109,7 @@ function MainComponent() {
         </div>
       </section>
 
-      <section id="features" className="py-32 bg-[#e5e4e0] flex items-center text-[#2c2d22]">
+      <section className="py-32 bg-[#e5e4e0] flex items-center text-[#2c2d22]">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="w-full max-w-4xl mx-auto">
             <div className="text-sm tracking-widest mb-6 text-[#2c2d22]">
@@ -176,7 +153,7 @@ function MainComponent() {
                   <h3 className="text-2xl mb-4 font-bold">敏感肌にも安心の施術</h3>
                   <p className="text-[#2c2d22] leading-relaxed">
                     「薬害70%カット、刺激を抑えた優しいケア」<br />
-                    カラーリングで刺激を感じやすい方にも安心な薬剤を使用。髪と頭皮に優しい施術で、美しさと安心感を両立します
+                    カラーリングで刺激を感じ��すい方にも安心な薬剤を使用。髪と頭皮に優しい施術で、美しさと安心感を両立します
                   </p>
                 </div>
               </li>
@@ -186,7 +163,7 @@ function MainComponent() {
                   <h3 className="text-2xl mb-4 font-bold">同世代だからわかる安心感</h3>
                   <p className="text-[#2c2d22] leading-relaxed">
                     「40代以降の悩みに特化したマンツーマンサポート」<br />
-                    40代以降の女性特有の髪の悩みに寄り添い、経験豊富な美容師が1対1対応。細やかなカウンセリングと施術で、あなたに最適なケアを提案します。
+                    40代以降の女性特有の髪の悩みに寄り添い、経験豊富な美容師が1対1で対応。細やかなカウンセリングと施術であなたに最適なケアを提案します。
                   </p>
                 </div>
               </li>
@@ -195,7 +172,7 @@ function MainComponent() {
         </div>
       </section>
 
-      <section id="menu" className="py-32 bg-[#938463]/10 text-[#2c2d22]">
+      <section className="py-32 bg-[#938463]/10 text-[#2c2d22]">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="text-sm tracking-widest mb-6 text-center">03</div>
           <h2 className="text-4xl font-serif mb-20 text-center">Menu</h2>
@@ -208,16 +185,8 @@ function MainComponent() {
                   <span>¥4,200</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>フロントカット</span>
+                  <span>前髪カット</span>
                   <span>¥1,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>サイドカット</span>
-                  <span>¥2,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>カットその他</span>
-                  <span>¥-</span>
                 </div>
               </div>
             </div>
@@ -225,31 +194,17 @@ function MainComponent() {
               <h3 className="text-2xl mb-8 border-b pb-2">Treatment Menu</h3>
               <div className="space-y-4">
                 <div className="flex justify-between">
-                  <span>オッジオット(クイック)</span>
-                  <span>¥3,700</span>
-                </div>
-                <div className="flex justify-between">
                   <span>オッジオット(ベーシック)</span>
                   <span>¥4,700</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>オッジオット(アドバンス)</span>
-                  <span>¥6,200</span>
                 </div>
                 <div className="flex justify-between">
                   <span>オッジオット(プレミアム)</span>
                   <span>¥8,200</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>トリートメントその他</span>
-                  <span>¥-</span>
-                </div>
               </div>
             </div>
             <div>
-              <h3 className="text-2xl mb-8 border-b border-[#8C715A] pb-2">
-                Color Menu
-              </h3>
+              <h3 className="text-2xl mb-8 border-b border-[#8C715A] pb-2">Color Menu</h3>
               <div className="space-y-6">
                 <div className="flex justify-between">
                   <span>カラー</span>
@@ -260,59 +215,21 @@ function MainComponent() {
                   <span>¥8,200</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>グロスカラー</span>
-                  <span>¥2,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>シャイニーグロス</span>
-                  <span>¥3,700</span>
-                </div>
-                <div className="flex justify-between">
                   <span>リタッチ</span>
                   <span>¥4,700</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>ハイライト</span>
-                  <span>¥-</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>ブリーチ</span>
-                  <span>¥10,200</span>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-2xl mb-8 border-b border-[#8C715A] pb-2">
-                Parm Menu
-              </h3>
+              <h3 className="text-2xl mb-8 border-b border-[#8C715A] pb-2">Perm Menu</h3>
               <div className="space-y-6">
                 <div className="flex justify-between">
                   <span>パーマ</span>
                   <span>¥6,200</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>クリーパーマ</span>
+                  <span>クリープパーマ</span>
                   <span>¥8,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>特殊パーマ</span>
-                  <span>¥10,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>縮毛 S</span>
-                  <span>¥20,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>縮毛 M</span>
-                  <span>¥25,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>縮毛 L</span>
-                  <span>¥30,200</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>部分縮毛</span>
-                  <span>¥-</span>
                 </div>
               </div>
             </div>
@@ -320,7 +237,7 @@ function MainComponent() {
         </div>
       </section>
 
-      <section id="access" className="py-32 bg-gradient-to-b from-[#7d5c45] to-[#2c2d22] text-[#e5e4e0]">
+      <section className="py-32 bg-gradient-to-b from-[#7d5c45] to-[#2c2d22] text-[#e5e4e0]">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="w-full max-w-4xl mx-auto">
             <div className="text-sm tracking-widest mb-6">04</div>
@@ -334,7 +251,7 @@ function MainComponent() {
                   <p className="text-base text-gray-400 mb-8">
                     最終受付：カット 19:00 / パーマ 18:00
                   </p>
-                  <p className="text-xl mb-2">Close: 月曜 / 第一、第三火曜</p>
+                  <p className="text-xl mb-2">Close: 火曜・水曜</p>
                   <p className="text-xl">Tel: 048-433-6467</p>
                 </div>
               </div>
@@ -404,10 +321,6 @@ function MainComponent() {
       </footer>
 
       <style jsx global>{`
-        html {
-          scroll-behavior: smooth;
-        }
-
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
